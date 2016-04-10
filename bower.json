@@ -1,0 +1,26 @@
+{
+  "name": "es2015-ripple",
+  "description": "Simple ripple effect written in ES2015",
+  "main": "ripple.min.js",
+  "authors": [
+    "Vitaliy Bobrov <bobrov1989@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "material",
+    "ripple",
+    "effect",
+    "click",
+    "touch",
+    "es2015",
+    "pure"
+  ],
+  "homepage": "https://github.com/vitaliy-bobrov/es2015-ripple",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
