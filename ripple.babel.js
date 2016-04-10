@@ -1,81 +1,79 @@
-((window, document, undefined) => {
+((window, document) => {
   'use strict';
 
-  const rippleParentClass = 'js-ripple';
-  const rippleClass = 'ripple-ink';
-  const animateClass = `${rippleClass}_animate`;
+  const rippleClass = 'ripple';
+  const inkClass = 'ripple-ink';
+  const animateClass = `${inkClass}_animate`;
 
+  /**
+   * Detect current browser animationend event name.
+   * @return {String} - event name.
+   */
   const detectAnimationEvent = () => {
     let eventName;
     let el = document.createElement('fakeelement');
 
     const animationEndEvents = {
-      'animation': 'animationend',
-      'OAnimation': 'oAnimationEnd',
-      'MozAnimation': 'animationend',
-      'WebkitAnimation': 'webkitAnimationEnd'
+      animation: 'animationend',
+      OAnimation: 'oAnimationEnd',
+      MozAnimation: 'animationend',
+      WebkitAnimation: 'webkitAnimationEnd'
     };
 
     for (eventName in animationEndEvents) {
-      if (el.style[eventName]) {
-        document.removeChild(el);
+      if (typeof el.style[eventName] !== 'undefined') {
         return animationEndEvents[eventName];
       }
     }
   };
 
-  const getInkPosition = element => {
-    let de = document.documentElement;
-    let box = element.getBoundingClientRect();
-    let top = box.top + pageYOffset - de.clientTop;
-    let left = box.left + pageXOffset - de.clientLeft;
-
-    return {top: top, left: left};
-  };
-
+  /**
+   * Deactivate link on animation end.
+   * @param {Object} event - object with event data.
+   * @return {HTMLElement} - event target.
+   */
   const deactivateInk = event => event.target.classList.remove(animateClass);
 
+  /**
+   * Ripple effect.
+   * @param {Object} event - object with event data.
+   */
   const rippleHandler = event => {
     let element = event.target;
-    let ripple = element.querySelector(`.js-${rippleClass}`);
-    let size;
-    let x;
-    let y;
-    let offsets;
+    let ripple = element.querySelector(`.${inkClass}`);
 
     if (ripple) {
       if (!ripple.offsetHeight && !ripple.offsetWidth) {
-          size = Math.max(element.offsetWidth, element.offsetHeight);
-          ripple.style.width = ripple.style.height = size + 'px';
-        }
+        ripple.effectSize = Math.max(element.offsetWidth, element.offsetHeight);
+        ripple.style.width = ripple.style.height = `${ripple.effectSize}px`;
+      }
 
-        x = event.pageX;
-        y = event.pageY;
+      ripple.style.top = `${event.offsetY - ripple.effectSize / 2}px`;
+      ripple.style.left = `${event.offsetX - ripple.effectSize / 2}px`;
 
-        offsets = getInkPosition(element);
-        ripple.style.top = (y - offsets.top - size / 2) + 'px';
-        ripple.style.left = (x - offsets.left - size / 2) + 'px';
-
-        ripple.classList.add(animateClass);
+      ripple.classList.add(animateClass);
     }
   };
 
+  /**
+   * Initialize ripple elements.
+   */
   const createInks = () => {
-    let parents = document.querySelectorAll(`.${rippleParentClass}`);
+    let parents = document.querySelectorAll(`.${rippleClass}`);
     const eventName = detectAnimationEvent();
 
     if (parents) {
-      Array.prototype.forEach.call(parents, parent => {
+      [].forEach.call(parents, parent => {
         let color = parent.getAttribute('data-ripple-color');
         let ripple = document.createElement('span');
 
-        ripple.className = `${rippleClass} js-${rippleClass}`;
+        ripple.className = inkClass;
 
         if (color) {
-          rippe.style.backgroundColor = color;
+          ripple.style.backgroundColor = color;
         }
 
-        parent.appendChild(ripple);
+        parent.insertBefore(ripple, parent.firstChild);
 
         parent.addEventListener('click', rippleHandler);
         ripple.addEventListener(eventName, deactivateInk);
@@ -84,5 +82,4 @@
   };
 
   document.addEventListener('DOMContentLoaded', createInks);
-
-})(window, document, undefined);
+})(window, document);

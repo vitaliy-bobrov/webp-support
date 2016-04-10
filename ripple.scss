@@ -1,3 +1,5 @@
+@import 'variables';
+
 .ripple {
   position: relative;
   overflow: hidden;
@@ -6,24 +8,24 @@
 .ripple-ink {
   display: block;
   position: absolute;
-  background-color: #fff;
+  background-color: $ripple-effect-color;
   border-radius: 50%;
   transform: scale(0);
 
   &_animate {
     animation-name: ripple;
-    animation-duration: .45s;
+    animation-duration: $ripple-effect-time;
   }
 }
 
 @keyframes ripple {
   0% {
-    opacity: .4;
+    opacity: $ripple-effect-initial-opacity;
     transform: scale(0);
   }
 
   100% {
     opacity: 0;
-    transform: scale(2.5);
+    transform: scale($ripple-effect-scale);
   }
 }
