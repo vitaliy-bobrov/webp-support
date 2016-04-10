@@ -1,21 +1,19 @@
 {
-  "name": "es2015-ripple",
-  "description": "Simple ripple effect written in ES2015",
-  "main": "ripple.min.js",
+  "name": "webp-support",
+  "homepage": "https://github.com/vitaliy-bobrov/webp-support",
   "authors": [
     "Vitaliy Bobrov <bobrov1989@gmail.com>"
   ],
-  "license": "MIT",
+  "description": "A pure javascript (no jQuery) lightweight library that checks browser WebP format support and adds 'webp' class to body if supported.",
+  "main": "webp.min.js",
   "keywords": [
-    "material",
-    "ripple",
-    "effect",
-    "click",
-    "touch",
-    "es2015",
-    "pure"
+    "webp",
+    "images",
+    "performance",
+    "feature",
+    "detect"
   ],
-  "homepage": "https://github.com/vitaliy-bobrov/es2015-ripple",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
