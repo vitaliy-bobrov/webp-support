@@ -31,5 +31,5 @@
     }
   };
 
-  document.addEventListener('DOMContentLoaded', testWepP(addWebPClass(support)))
+  document.addEventListener('DOMContentLoaded', testWepP(addWebPClass(support)));
 })(document);
