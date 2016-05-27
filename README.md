@@ -1,6 +1,8 @@
 WebP Support
 ==============
 
+[![Bower version](https://badge.fury.io/bo/webp-support.svg)](https://badge.fury.io/bo/webp-support)
+
 A pure javascript (no jQuery) lightweight library that checks browser WebP format support and adds 'webp' class to body if supported.
 
 What is WebP? - [Answer](https://developers.google.com/speed/webp/)
