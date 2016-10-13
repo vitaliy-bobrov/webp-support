@@ -1,12 +1,12 @@
 {
   "name": "webp-support",
-  "homepage": "https://github.com/vitaliy-bobrov/webp-support",
   "version": "1.0.1",
-  "authors": [
-    "Vitaliy Bobrov <bobrov1989@gmail.com>"
-  ],
   "description": "A pure javascript (no jQuery) lightweight library that checks browser WebP format support and adds 'webp' class to body if supported.",
-  "main": "webp.min.js",
+  "main": "webp.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliy-bobrov/webp-support.git"
+  },
   "keywords": [
     "webp",
     "images",
@@ -14,12 +14,10 @@
     "feature",
     "detect"
   ],
+  "author": "Vitaliy Bobrov",
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "bugs": {
+    "url": "https://github.com/vitaliy-bobrov/webp-support/issues"
+  },
+  "homepage": "https://github.com/vitaliy-bobrov/webp-support#readme"
 }

@@ -21,6 +21,14 @@ Include the script in your HTML
   <script src="bower_components/webp-support/webp.min.js"></script>
   ```
 
+  or import with native JavaScript `import` or CommnJS:
+
+  ```js
+  import * from 'webp-support';
+
+  require('webp-support');
+  ```
+
 If browser support webp format it'll add the `webp` class to body tag.
 
 Also you can import ES2015 version in your scripts.
