@@ -1,6 +1,6 @@
 {
   "name": "webp-detect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A pure javascript (no jQuery) lightweight library that checks browser WebP format support and adds 'webp' class to body if supported.",
   "main": "webp.js",
   "repository": {
