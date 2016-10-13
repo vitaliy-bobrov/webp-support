@@ -28,11 +28,9 @@ Include the script in your HTML
   <script src="bower_components/webp-support/webp.min.js"></script>
   ```
 
-  or add to your bundle `import` or CommnJS:
+  or add to your bundle:
 
   ```js
-  import * from 'webp-detect';
-
   require('webp-sdetect');
   ```
 
