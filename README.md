@@ -13,6 +13,12 @@ What is WebP? - [Answer](https://developers.google.com/speed/webp/)
   bower install --save webp-support
   ```
 
+## npm
+
+  ```bash
+  npm install --save webp-detect
+  ```
+
 ## Usage
 
 Include the script in your HTML
@@ -21,12 +27,12 @@ Include the script in your HTML
   <script src="bower_components/webp-support/webp.min.js"></script>
   ```
 
-  or import with native JavaScript `import` or CommnJS:
+  or add to your bundle `import` or CommnJS:
 
   ```js
-  import * from 'webp-support';
+  import * from 'webp-detect';
 
-  require('webp-support');
+  require('webp-sdetect');
   ```
 
 If browser support webp format it'll add the `webp` class to body tag.
