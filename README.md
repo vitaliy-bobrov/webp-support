@@ -3,6 +3,7 @@ WebP Support
 
 [![Bower version](https://badge.fury.io/bo/webp-support.svg)](https://badge.fury.io/bo/webp-support)
 [![npm version](https://badge.fury.io/js/webp-detect.svg)](https://badge.fury.io/js/webp-detect)
+[![npm](https://img.shields.io/npm/dt/webp-detect.svg)](https://github.com/vitaliy-bobrov/webp-detect)
 
 A pure javascript (no jQuery) lightweight library that checks browser WebP format support and adds 'webp' class to body if supported.
 
@@ -31,7 +32,7 @@ Include the script in your HTML
   or add to your bundle:
 
   ```js
-  require('webp-sdetect');
+  require('webp-detect');
   ```
 
 If browser support webp format it'll add the `webp` class to body tag.
